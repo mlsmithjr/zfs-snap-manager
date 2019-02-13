@@ -3,7 +3,21 @@ zfs-snap-manager
 
 ZFS Snapshot Manager
 
-NOTE: Updated for Python 3
+NOTE: Updated for Python 3 from original forked copy using Python 2
+
+NOTE,2: There is a bug in python-daemon-3K (and the original python-daemon) package as of this writing.
+You must manually fix it.  Edit /usr/local/lib/python3.6/dist-packages/daemon/runner.py, line 135, and remove ", buffering=0" parameter
+
+Quick Install
+-------------
+pip3 install -r requirements.txt
+sudo cp system/zfs-snap-manager.service to /etc/systemd/system
+sudo mkdir /usr/lib/zfs-snap-manager && sudo cp scripts/*.py /usr/lib/zfs-snap-manager
+sudo systemctl daemon-reload
+sudo systemctl start zfs-snap-manager
+
+check /var/log/zfs-snap-manager.log for errors.
+
 
 Usage
 -----
