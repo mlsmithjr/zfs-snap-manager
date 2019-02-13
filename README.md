@@ -3,6 +3,8 @@ zfs-snap-manager
 
 ZFS Snapshot Manager
 
+NOTE: Updated for Python 3
+
 Usage
 -----
 
