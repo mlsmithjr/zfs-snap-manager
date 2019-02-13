@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # Copyright (c) 2014 Kenneth Henderick <kenneth@ketronic.be>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy

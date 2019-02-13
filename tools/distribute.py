@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # Copyright (c) 2015 Kenneth Henderick <kenneth@ketronic.be>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,7 +33,8 @@ from subprocess import check_output
 
 if __name__ == '__main__':
     this_directory = os.path.dirname(os.path.abspath(__file__))
-    print 'Copying files to local node...'
+    print('Copying files to local node...')
+    os.makedirs('/usr/lib/zfs-snap-manager', 0o744, exist_ok=True)
     commands = []
     for filename in ['clean.py', 'helper.py', 'manager.py', 'zfs.py']:
         commands.append('cp {0}/../scripts/{1} /usr/lib/zfs-snap-manager/{1}'.format(this_directory, filename))

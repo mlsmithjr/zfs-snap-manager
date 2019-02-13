@@ -130,10 +130,9 @@ Dependencies
 This python program/script has a few dependencies. When using the Archlinux AUR, these will be installed automatically.
 
 * zfs
-* python2
+* python3
 * openssh
-* mbuffer
-* python2-daemon
+* python-daemon
 
 Logging
 -------
