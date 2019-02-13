@@ -113,8 +113,7 @@ class Cleaner(object):
             for snapshot in held_snapshots:
                 Cleaner.logger.info('  Skipping held {0}@{1}'.format(dataset, snapshot))
 
-        keys = to_delete.keys()
-        keys.sort()
+        keys = sorted(to_delete.keys())
         for key in keys:
             for snapshot in to_delete[key]:
                 Cleaner.logger.info('  Destroying {0}@{1}'.format(dataset, snapshot['name']))

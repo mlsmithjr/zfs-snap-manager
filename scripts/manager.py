@@ -23,7 +23,7 @@
 Provides the overal functionality
 """
 
-import ConfigParser
+from configparser import ConfigParser
 import time
 import os
 import logging
@@ -202,7 +202,7 @@ class Manager(object):
 
         settings = {}
         try:
-            config = ConfigParser.RawConfigParser()
+            config = ConfigParser()
             config.read('/etc/zfssnapmanager.cfg')
             for dataset in config.sections():
                 settings[dataset] = {'mountpoint': config.get(dataset, 'mountpoint') if config.has_option(dataset, 'mountpoint') else None,

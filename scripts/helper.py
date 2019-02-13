@@ -38,9 +38,10 @@ class Helper(object):
         """
 
         pattern = re.compile(r'[^\n\t@ a-zA-Z0-9_\\.:/\-]+')
+        print(f'command=[{command}]')
         process = Popen(command, shell=True, cwd=cwd, stdout=PIPE, stderr=PIPE)
         out, err = process.communicate()
         return_code = process.poll()
         if return_code != 0:
             raise RuntimeError('{0} failed with return value {1} and error message {2}'.format(command, return_code, err))
-        return re.sub(pattern, '', out)
+        return re.sub(pattern, '', out.decode('utf-8'))
