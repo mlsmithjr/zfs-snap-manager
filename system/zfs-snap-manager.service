@@ -1,6 +1,6 @@
 [Unit]
 Description=ZFS Snapshot Manager
-After=syslog.target
+After=syslog.target zfs.target
 
 [Service]
 Type=simple
